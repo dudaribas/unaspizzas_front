@@ -1,0 +1,31 @@
+<button (click)="routeBack()" class="button-back">
+  <ng-icon name="matChevronLeft" size="30"></ng-icon>
+</button>
+
+<img class="pizza-image" [src]="pizzaImage" alt="" />
+
+<div class="pizza-detail">
+  <div class="pizza-name-price">
+    <h1>{{ pizza.name }}</h1>
+    <span>{{
+      pizza.price.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL"
+      })
+    }}</span>
+  </div>
+
+  <p>{{ pizza.description }}</p>
+</div>
+
+<div class="add-cart-footer">
+  <div class="plus-minus-button">
+    <button (click)="minusQuantity()"><ng-icon name="matMinus" size="20" color="#ED1D24"></ng-icon></button>
+    <span>{{pizzaCartQuantity}}</span>
+    <button (click)="plusQuantity()"><ng-icon name="matPlus" size="20" color="#ED1D24"></ng-icon></button>
+  </div>
+  <button class="button-add">
+    <span>Adicionar</span>
+    <span>{{(pizza.price * pizzaCartQuantity).toLocaleString("pt-br", {style: "currency", currency: "BRL"})}}</span>
+  </button>
+</div>

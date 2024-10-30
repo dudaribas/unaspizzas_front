@@ -1,0 +1,13 @@
+<div (click)="goToPizzaDetail()" class="pizza-card">
+  <img *ngIf="pizzaImage" [src]="pizzaImage" alt="Pizza image" />
+
+  <div class="pizza-info">
+    <span class="pizza-name">{{ pizza.name }}</span>
+    <span class="pizza-price">{{
+      pizza.price.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL"
+      })
+    }}</span>
+  </div>
+</div>

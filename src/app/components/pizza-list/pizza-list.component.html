@@ -1,0 +1,29 @@
+<div class="category-list">
+  <div *ngFor="let category of categoryList">
+    <div
+      class="category"
+      [ngStyle]="
+        category.id == idPizzaCategory
+          ? { 'background-color': '#ED1D24', color: '#FFF' }
+          : {}
+      "
+      (click)="changeIdPizzaCategory(category.id)"
+    >
+      <img [src]="category.image" alt="Category image" />
+      <span>{{ category.name }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="pizza-list">
+  <div *ngFor="let pizza of pizzas">
+    <app-pizza-card [pizza]="pizza"></app-pizza-card>
+  </div>
+</div>
+
+<div class="cart-footer">
+  <span>Visualizar sacola</span>
+  <div>
+    <img src="basket.png" alt="">
+  </div>
+</div>
