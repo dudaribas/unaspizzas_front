@@ -24,7 +24,7 @@
     <span>{{pizzaCartQuantity}}</span>
     <button (click)="plusQuantity()"><ng-icon name="matPlus" size="20" color="#ED1D24"></ng-icon></button>
   </div>
-  <button class="button-add">
+  <button class="button-add" (click)="handleAddToCart()">
     <span>Adicionar</span>
     <span>{{(pizza.price * pizzaCartQuantity).toLocaleString("pt-br", {style: "currency", currency: "BRL"})}}</span>
   </button>

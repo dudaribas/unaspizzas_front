@@ -56,3 +56,20 @@
   color: #FFF;
   font-weight: 600;
 }
+
+.cart-icon {
+  position: relative;
+  display: flex;
+}
+
+.cart-icon span {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background-color: #A10000;
+  font-size: 12px;
+  padding: 2px;
+  min-width: 15px;
+  text-align: center;
+  border-radius: 0.5rem;
+}

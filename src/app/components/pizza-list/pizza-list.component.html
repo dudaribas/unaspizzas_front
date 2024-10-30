@@ -21,9 +21,10 @@
   </div>
 </div>
 
-<div class="cart-footer">
+<div class="cart-footer" (click)="goToCart()">
   <span>Visualizar sacola</span>
-  <div>
-    <img src="basket.png" alt="">
+  <div class="cart-icon">
+    <img src="basket.png" alt="Cart icon">
+    <span>{{totalCartItems}}</span>
   </div>
 </div>
