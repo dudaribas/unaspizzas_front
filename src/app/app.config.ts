@@ -3,18 +3,14 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { DishListComponent } from './components/dish-list/dish-list.component';
-import { DishFormComponent } from './components/dish-form/dish-form.component';
+import { PizzaListComponent } from './components/pizza-list/pizza-list.component';
+import { PizzaDetailComponent } from './components/pizza-detail/pizza-detail.component';
 
 const routes: Routes = [
-  { path: '', component: DishListComponent },
-  { path: 'add-dish', component: DishFormComponent },
-  { path: 'edit-dish/:id', component: DishFormComponent },
+  { path: '', component: PizzaListComponent },
+  { path: 'pizza/:id', component: PizzaDetailComponent },
 ];
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(routes),
-    importProvidersFrom(HttpClientModule)
-  ]
+  providers: [provideRouter(routes), importProvidersFrom(HttpClientModule)],
 };
