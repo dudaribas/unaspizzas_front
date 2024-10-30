@@ -1,0 +1,26 @@
+<div class="cart-item">
+  <img [src]="pizzaImage" alt="Image pizza" />
+
+  <div class="pizza-info">
+    <h3>{{ pizzaOrder.pizza.name }}</h3>
+    <div class="pizza-name">
+      <p>{{ pizzaOrder.pizza.description }}</p>
+    </div>
+    <span>{{
+      pizzaOrder.pizza.price.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL"
+      })
+    }}</span>
+  </div>
+
+  <div class="plus-minus-button">
+    <button (click)="handleMinusQuntity()">
+      <ng-icon name="matMinus" size="16" color="#ED1D24"></ng-icon>
+    </button>
+    <span>{{ pizzaOrder.quantity }}</span>
+    <button (click)="handlePlusQuntity()">
+      <ng-icon name="matPlus" size="16" color="#ED1D24"></ng-icon>
+    </button>
+  </div>
+</div>

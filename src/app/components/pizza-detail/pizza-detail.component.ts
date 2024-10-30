@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pizza } from '../../types/pizza';
+import { Pizza, PizzaOrder } from '../../types/pizza';
 import { PizzaService } from '../../services/pizza.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
@@ -9,6 +9,7 @@ import {
   matMinus,
   matPlus,
 } from '@ng-icons/material-icons/baseline';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-pizza-detail',
@@ -26,9 +27,12 @@ export class PizzaDetailComponent {
 
   constructor(
     private pizzaService: PizzaService,
+    private cartService: CartService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    this.cartService.init();
+  }
 
   ngOnInit() {
     const idPizza = this.route.snapshot.paramMap.get('id');
@@ -53,6 +57,17 @@ export class PizzaDetailComponent {
   }
 
   routeBack() {
-    this.router.navigate(["/"])
+    this.router.navigate(['/']);
+  }
+
+  handleAddToCart() {
+    if (this.pizzaCartQuantity !== 0) {
+      this.cartService.addToCart({
+        pizza: this.pizza,
+        quantity: this.pizzaCartQuantity,
+      });
+
+      this.router.navigate(['/cart']);
+    }
   }
 }

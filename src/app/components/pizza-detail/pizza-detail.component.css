@@ -73,7 +73,8 @@
 }
 
 .plus-minus-button span {
-  flex: 1
+  flex: 1;
+  text-align: center;
 }
 
 .button-add {

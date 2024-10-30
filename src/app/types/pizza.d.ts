@@ -11,3 +11,8 @@ export interface Pizza {
   image: string;
   category: PizzaCategory;
 }
+
+export interface PizzaOrder {
+  pizza: Pizza;
+  quantity: number;
+}

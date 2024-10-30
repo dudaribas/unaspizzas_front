@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { Pizza } from '../../types/pizza';
 import { PizzaService } from '../../services/pizza.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PizzaCardComponent } from '../pizza-card/pizza-card.component';
+import { CartService } from '../../services/cart.service';
 
 type Category = {
   id: number | null;
@@ -43,10 +44,16 @@ export class PizzaListComponent {
   ];
 
   idPizzaCategory: number | null = null;
-
   pizzas: Pizza[] = [];
+  totalCartItems: number = 0;
 
-  constructor(private pizzaService: PizzaService) {}
+  constructor(
+    private pizzaService: PizzaService,
+    private cartService: CartService,
+    private router: Router
+  ) {
+    cartService.init();
+  }
 
   getPizzas() {
     this.pizzaService
@@ -58,10 +65,17 @@ export class PizzaListComponent {
 
   ngOnInit() {
     this.getPizzas();
+    this.cartService.cartItems$.subscribe((data) => {
+      this.totalCartItems = data.length;
+    });
   }
 
   changeIdPizzaCategory(idPizzaCategory: number | null) {
     this.idPizzaCategory = idPizzaCategory;
     this.getPizzas();
+  }
+
+  goToCart() {
+    this.router.navigate(['/cart']);
   }
 }
