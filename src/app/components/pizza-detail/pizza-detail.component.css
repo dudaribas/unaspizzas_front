@@ -1,0 +1,88 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  border-radius: 100%;
+  background-color: #FFF;
+  border: none;
+  overflow: hidden;
+}
+
+.pizza-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.pizza-detail {
+  padding: 1rem;
+}
+
+.pizza-name-price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pizza-name-price h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.pizza-name-price span {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.pizza-detail p {
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.add-cart-footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.plus-minus-button {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.2rem;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.plus-minus-button button {
+  background: none;
+  border: none;
+}
+
+.plus-minus-button span {
+  flex: 1
+}
+
+.button-add {
+  background-color: #ED1D24;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  border: none;
+  color: #FFF;
+}
