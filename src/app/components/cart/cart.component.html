@@ -1,0 +1,36 @@
+<div class="cart-header">
+  <div>
+    <button (click)="backToHome()">
+      <ng-icon name="matChevronLeft" size="40"></ng-icon>
+    </button>
+  </div>
+  <h1>Sacola</h1>
+  <div></div>
+</div>
+
+<div class="cart-items-empty" *ngIf="cartItems.length == 0">
+  <p>Não há nenhum item na sacola.</p>
+</div>
+
+<div class="cart" *ngIf="cartItems.length !== 0">
+  <div class="cart-list">
+    <div *ngFor="let cartItem of cartItems">
+      <app-cart-item [pizzaOrder]="cartItem"></app-cart-item>
+    </div>
+  </div>
+  <div class="cart-total">
+    <span>Total</span>
+    <span>
+      {{
+        cartTotal.toLocaleString("pt-br", {
+          style: "currency",
+          currency: "BRL"
+        })
+      }}
+    </span>
+  </div>
+</div>
+
+<div class="footer-finish" *ngIf="cartItems.length !== 0">
+  <button>Finalizar pedido</button>
+</div>
