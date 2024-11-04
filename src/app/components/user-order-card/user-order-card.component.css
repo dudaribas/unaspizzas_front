@@ -1,0 +1,51 @@
+.user-order-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #ED1D24;
+  padding: 0.8rem;
+}
+
+.card-header h3 {
+  font-size: 1rem;
+  color: #FFF;
+}
+
+.card-content {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.user-info p {
+  text-align: right;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.order-pizzas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.order-itens {
+  padding-left: 2rem;
+}
+
+.order-itens li {
+  font-size: 0.9rem;
+}
