@@ -1,0 +1,33 @@
+<div class="user-order-card">
+  <div class="card-header">
+    <h3>#{{ order.idOrder }} - {{ order.statusOrder.nameStatus }}</h3>
+  </div>
+
+  <div class="card-content">
+    <div class="user-info">
+      <span class="label">Nome: </span>
+      <p>{{ order.user.name }}</p>
+    </div>
+
+    <div class="user-info">
+      <span class="label">Endereço: </span>
+      <p>{{ order.user.address }}</p>
+    </div>
+
+    <div class="order-pizzas">
+      <span class="label">Itens do pedido: </span>
+
+      <ul class="order-itens" *ngFor="let orderPizza of order.orderPizzas">
+        <li>
+          {{ orderPizza.pizza.name }} ({{ orderPizza.quantity }}x) -
+          {{
+            (orderPizza.pizza.price * orderPizza.quantity).toLocaleString(
+              "pt-br",
+              { style: "currency", currency: "BRL" }
+            )
+          }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

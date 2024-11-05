@@ -32,5 +32,5 @@
 </div>
 
 <div class="footer-finish" *ngIf="cartItems.length !== 0">
-  <button>Finalizar pedido</button>
+  <button (click)="handleFinishOrder()">Finalizar pedido</button>
 </div>

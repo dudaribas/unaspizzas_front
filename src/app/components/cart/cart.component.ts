@@ -6,6 +6,10 @@ import { PizzaOrder } from '../../types/pizza';
 import { CartService } from '../../services/cart.service';
 import { CartItemComponent } from '../cart-item/cart-item.component';
 import { matChevronLeft } from '@ng-icons/material-icons/baseline';
+import { Order, OrderDTO } from '../../types/order';
+import { OrderService } from '../../services/order.service';
+import { UserService } from '../../services/user.service';
+import { User } from '../../types/user';
 
 @Component({
   selector: 'app-cart',
@@ -18,8 +22,14 @@ import { matChevronLeft } from '@ng-icons/material-icons/baseline';
 export class CartComponent {
   cartItems: PizzaOrder[] = [];
   cartTotal: number = 0;
+  user: User | null = null;
 
-  constructor(private cartService: CartService, private router: Router) {
+  constructor(
+    private cartService: CartService,
+    private orderService: OrderService,
+    private userService: UserService,
+    private router: Router
+  ) {
     this.cartService.init();
   }
 
@@ -28,7 +38,11 @@ export class CartComponent {
       this.cartItems = data;
     });
 
-    this.cartTotal = this.cartService.getTotalCart();
+    this.userService.user$.subscribe((data) => {
+      this.user = data;
+    });
+
+    this.cartService.getTotalCart();
   }
 
   ngDoCheck(): void {
@@ -37,5 +51,26 @@ export class CartComponent {
 
   backToHome() {
     this.router.navigate(['/']);
+  }
+
+  handleFinishOrder() {
+    if (!this.user) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    const orderDTO: OrderDTO = {
+      user: this.user,
+      orderPizzas: this.cartItems,
+      statusOrder: {
+        idStatusOrder: 1,
+        nameStatus: 'Pendente',
+      },
+      totalPrice: this.cartTotal,
+    };
+
+    this.orderService.createOrder(orderDTO).subscribe(() => {
+      this.cartService.removeAll();
+    });
   }
 }

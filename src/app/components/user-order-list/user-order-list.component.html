@@ -1,0 +1,16 @@
+<div class="order-header">
+  <div>
+    <button (click)="backToHome()">
+      <ng-icon name="matChevronLeft" size="40"></ng-icon>
+    </button>
+  </div>
+  <h1>Meus pedidos</h1>
+
+  <div></div>
+</div>
+
+<div class="user-order-list">
+  <div *ngFor="let order of orderList">
+    <app-user-order-card [order]="order"></app-user-order-card>
+  </div>
+</div>

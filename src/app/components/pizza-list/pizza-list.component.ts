@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { PizzaCardComponent } from '../pizza-card/pizza-card.component';
 import { CartService } from '../../services/cart.service';
+import { User } from '../../types/user';
 
 type Category = {
   id: number | null;
@@ -78,4 +79,5 @@ export class PizzaListComponent {
   goToCart() {
     this.router.navigate(['/cart']);
   }
+  
 }
