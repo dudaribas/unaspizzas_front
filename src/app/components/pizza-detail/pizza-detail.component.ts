@@ -57,7 +57,7 @@ export class PizzaDetailComponent {
   }
 
   routeBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu']);
   }
 
   handleAddToCart() {

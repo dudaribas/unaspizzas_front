@@ -1,0 +1,93 @@
+<div class="header-kitchen-pizzas"></div>
+
+<div class="kitchen-pizzas">
+  <div class="content-card">
+    <button (click)="routeBack()" class="button-back">
+      <ng-icon name="matChevronLeft" size="45" />
+    </button>
+    <div class="pizza-form">
+      <div class="pizza-image-container">
+        <label class="label-pizza-image" for="pizza-image">
+          <ng-icon *ngIf="imageUrl == null" name="matCameraAlt" size="25" />
+          <img *ngIf="imageUrl !== null" [src]="imageUrl" alt="" />
+        </label>
+
+        <input
+          accept=".jpg,.png,.jpeg"
+          (change)="handleChangeImage($event)"
+          id="pizza-image"
+          type="file"
+        />
+      </div>
+
+      <div class="wrap-input-first">
+        <input
+          class="input-form"
+          type="text"
+          placeholder="Nome da pizza"
+          [(ngModel)]="pizzaName"
+        />
+        <textarea
+          rows="4"
+          cols="50"
+          class="input-form"
+          type="text"
+          aria-multiline="true"
+          placeholder="Descrição da pizza"
+          [(ngModel)]="pizzaDescription"
+        ></textarea>
+      </div>
+
+      <div class="wrap-input">
+        <input
+          class="input-form"
+          type="number"
+          placeholder="Preço da pizza"
+          [(ngModel)]="pizzaPrice"
+        />
+        <select
+          [(ngModel)]="pizzaCategory"
+          class="select-category"
+          name="order-categories"
+          id="order-categories"
+        >
+          <option value="1">Tradicional</option>
+          <option value="2">Gourmet</option>
+          <option value="3">Doce</option>
+        </select>
+      </div>
+
+      <button
+        *ngIf="isEditing === false"
+        (click)="handleAddPizza()"
+        class="button-add"
+      >
+        Adicionar
+      </button>
+
+      <div *ngIf="isEditing === true" class="update-actions">
+        <button (click)="cancelEdit()" class="button-cancel">Cancelar</button>
+        <button (click)="handleUpdatePizza()" class="button-save">
+          Salvar
+        </button>
+      </div>
+    </div>
+
+    <div class="pizza-list">
+      <div *ngFor="let pizza of pizzas">
+        <div class="pizza-card">
+          <span>{{ pizza.name }}</span>
+
+          <div class="actions">
+            <button (click)="editMode(pizza)">
+              <ng-icon name="matEdit" size="25" color="#1d54ed" />
+            </button>
+            <button (click)="handleDeletePizza(pizza.idPizza)">
+              <ng-icon name="matDelete" size="25" color="#ed1d24" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

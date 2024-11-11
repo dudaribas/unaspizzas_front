@@ -92,4 +92,8 @@ export class PizzaListComponent {
   goToMyOrders() {
     this.router.navigate(['/my-orders']);
   }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
 }

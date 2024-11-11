@@ -1,5 +1,6 @@
-<div class="my-orders-div" *ngIf="user !== null">
-  <button (click)="goToMyOrders()">Meus pedidos</button>
+<div class="my-orders-div">
+  <button *ngIf="user !== null" (click)="goToMyOrders()">Meus pedidos</button>
+  <button *ngIf="user == null" (click)="goToLogin()">Login</button>
 </div>
 
 <div class="category-list">

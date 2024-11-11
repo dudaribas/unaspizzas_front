@@ -29,7 +29,7 @@ export class SignupComponent {
     this.userService.signUp(userDTO).subscribe((data) => {
       if (data) {
         this.userService.updateUser(data);
-        this.router.navigate(['/']);
+        this.router.navigate(['/menu']);
       }
     });
   }
