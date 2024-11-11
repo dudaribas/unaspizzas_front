@@ -8,6 +8,8 @@ import { PizzaDetailComponent } from './components/pizza-detail/pizza-detail.com
 import { CartComponent } from './components/cart/cart.component';
 import { UserOrderListComponent } from './components/user-order-list/user-order-list.component';
 import { KitchenComponent } from './components/kitchen/kitchen.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: PizzaListComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'my-orders', component: UserOrderListComponent },
   { path: 'kitchen', component: KitchenComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
 ];
 
 export const appConfig: ApplicationConfig = {

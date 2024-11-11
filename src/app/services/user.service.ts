@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { LoginDTO, User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8080/pizza';
+  private apiUrl = 'http://localhost:8080/user';
 
   user: User | null = null;
   private userSubject = new BehaviorSubject<User | null>(this.user);
@@ -32,18 +32,12 @@ export class UserService {
     this.setLocalUser(this.user);
   }
 
-  signUp(userDTO: User) {
-    this.http.post<User>(`${this.apiUrl}/user`, userDTO).subscribe((data) => {
-      this.updateUser(data);
-    });
+  signUp(userDTO: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, userDTO);
   }
 
-  login(loginDTO: LoginDTO) {
-    this.http
-      .post<User>(`${this.apiUrl}/user/login`, loginDTO)
-      .subscribe((data) => {
-        this.updateUser(data);
-      });
+  login(loginDTO: LoginDTO): Observable<User> {
+    return this.http.post<User>(`${this.apiUrl}/login`, loginDTO);
   }
 
   logout() {
