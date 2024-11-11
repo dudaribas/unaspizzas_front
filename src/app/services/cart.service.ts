@@ -50,4 +50,10 @@ export class CartService {
 
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
+
+  removeAll() {
+    localStorage.removeItem('cart');
+    this.cartItems = [];
+    this.cartItemsSubject.next(this.cartItems);
+  }
 }

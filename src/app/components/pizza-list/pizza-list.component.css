@@ -38,7 +38,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  padding: 0 1rem;
+  padding: 0 1rem 4rem 1rem;
 }
 
 .cart-footer {
@@ -48,7 +48,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
