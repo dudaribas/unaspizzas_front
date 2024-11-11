@@ -14,7 +14,7 @@ export interface OrderDTO {
 }
 
 export interface Order extends OrderDTO {
-  idOrder: string;
+  idOrder: number;
   createdAt: string;
   updatedAt: string;
 }

@@ -34,7 +34,7 @@ export class UserOrderListComponent {
   ngOnInit() {
     this.userService.user$.subscribe((data) => {
       if (data) {
-        this.orderService.getPizzasByUser(data.idUser).subscribe((data) => {
+        this.orderService.getOrdersByUser(data.idUser).subscribe((data) => {
           this.orderList = data;
         });
 

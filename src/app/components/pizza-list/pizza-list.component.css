@@ -1,8 +1,21 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-top: 2rem;
+}
+
+.my-orders-div {
+  display: flex;
+  justify-content: end;
+  padding: 0px 1rem;
+  margin-top: 1rem;
+}
+
+.my-orders-div button {
+  padding: 0.5rem;
+  background-color: #ed1d24;
+  border: none;
+  color: #FFF;
+  border-radius: 1rem;
 }
 
 .category-list {
@@ -11,6 +24,7 @@
   gap: 1rem;
   width: 100%;
   overflow-x: scroll;
+  margin-bottom: 2rem;
 }
 
 .category {

@@ -6,6 +6,7 @@ import { Router, RouterModule } from '@angular/router';
 import { PizzaCardComponent } from '../pizza-card/pizza-card.component';
 import { CartService } from '../../services/cart.service';
 import { User } from '../../types/user';
+import { UserService } from '../../services/user.service';
 
 type Category = {
   id: number | null;
@@ -47,10 +48,12 @@ export class PizzaListComponent {
   idPizzaCategory: number | null = null;
   pizzas: Pizza[] = [];
   totalCartItems: number = 0;
+  user: User | null = null;
 
   constructor(
     private pizzaService: PizzaService,
     private cartService: CartService,
+    private userService: UserService,
     private router: Router
   ) {
     cartService.init();
@@ -69,6 +72,12 @@ export class PizzaListComponent {
     this.cartService.cartItems$.subscribe((data) => {
       this.totalCartItems = data.length;
     });
+
+    this.userService.user$.subscribe((data) => {
+      if (data) {
+        this.user = data;
+      }
+    });
   }
 
   changeIdPizzaCategory(idPizzaCategory: number | null) {
@@ -79,5 +88,8 @@ export class PizzaListComponent {
   goToCart() {
     this.router.navigate(['/cart']);
   }
-  
+
+  goToMyOrders() {
+    this.router.navigate(['/my-orders']);
+  }
 }
