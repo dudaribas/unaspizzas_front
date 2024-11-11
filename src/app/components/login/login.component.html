@@ -1,0 +1,27 @@
+<div class="login-screen">
+  <div class="top-half">
+    <div class="new-container">
+      <img src="foto-pizza.png" alt="Imagem de pizza" />
+      <h1 class="unas-pizzas">UnasPizzas</h1>
+    </div>
+  </div>
+
+  <div class="bottom-half">
+    <div class="form-content">
+      <div>
+        <h2 class="welcome-message">Bem-vindo de volta!</h2>
+        <h3 class="login-message">Logue para continuar</h3>
+      </div>
+
+      <div class="input-label">
+        <input [(ngModel)]="email" type="email" placeholder="E-mail" required />
+
+        <span (click)="goToSignup()">Cadastre-se!</span>
+
+        <button (click)="handleLogin()" type="submit" class="button-login">
+          Entrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
