@@ -19,7 +19,7 @@ export class LoginComponent {
     this.userService.login({ email: this.email }).subscribe((data) => {
       if (data) {
         this.userService.updateUser(data);
-        this.router.navigate(['/']);
+        this.router.navigate(['/menu']);
       }
     });
   }
@@ -27,7 +27,7 @@ export class LoginComponent {
   ngOnInit() {
     this.userService.user$.subscribe((data) => {
       if (data) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/menu']);
       }
     });
   }

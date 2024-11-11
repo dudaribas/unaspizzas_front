@@ -1,0 +1,23 @@
+<div class="login-screen">
+  <div class="top-half">
+    <div class="new-container">
+      <img src="foto-pizza.png" alt="Imagem de pizza" />
+      <h1 class="unas-pizzas">UnasPizzas</h1>
+    </div>
+  </div>
+
+  <div class="bottom-half">
+    <div class="form-content">
+      <h2>Selecione:</h2>
+      <button (click)="goToMenu()" type="submit" class="button-choice">
+        Cliente
+      </button>
+      <button (click)="goToKitchen()" type="submit" class="button-choice">
+        Cozinheiro
+      </button>
+      <button (click)="goToOrders()" type="submit" class="button-choice">
+        Motoboy
+      </button>
+    </div>
+  </div>
+</div>

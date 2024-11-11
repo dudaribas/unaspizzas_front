@@ -10,13 +10,17 @@ import { UserOrderListComponent } from './components/user-order-list/user-order-
 import { KitchenComponent } from './components/kitchen/kitchen.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { InitialRouteComponent } from './components/initial-route/initial-route.component';
+import { KitchenPizzasComponent } from './components/kitchen-pizzas/kitchen-pizzas.component';
 
 const routes: Routes = [
-  { path: '', component: PizzaListComponent },
+  { path: '', component: InitialRouteComponent },
+  { path: 'menu', component: PizzaListComponent },
   { path: 'pizza/:id', component: PizzaDetailComponent },
   { path: 'cart', component: CartComponent },
   { path: 'my-orders', component: UserOrderListComponent },
   { path: 'kitchen', component: KitchenComponent },
+  { path: 'kitchen/pizzas', component: KitchenPizzasComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
 ];

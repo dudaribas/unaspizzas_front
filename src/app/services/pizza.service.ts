@@ -19,4 +19,16 @@ export class PizzaService {
   getPizza(idPizza: number): Observable<Pizza> {
     return this.http.get<Pizza>(`${this.apiUrl}/${idPizza}`);
   }
+
+  addPizza(data: FormData): Observable<Pizza> {
+    return this.http.post<Pizza>(this.apiUrl, data);
+  }
+
+  deletePizza(idPizza: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${idPizza}`);
+  }
+
+  updatePizza(idPizza: number, data: FormData): Observable<Pizza> {
+    return this.http.put<Pizza>(`${this.apiUrl}/${idPizza}`, data);
+  }
 }

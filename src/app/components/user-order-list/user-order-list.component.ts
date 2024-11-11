@@ -46,6 +46,6 @@ export class UserOrderListComponent {
   }
 
   backToHome() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu']);
   }
 }

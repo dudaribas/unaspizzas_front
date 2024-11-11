@@ -19,13 +19,14 @@ export class KitchenOrderItemComponent {
 
   refreshPage() {
     const currentUrl = this.router.url;
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([currentUrl]);
-    });
+    this.router
+      .navigateByUrl('/menu', { skipLocationChange: true })
+      .then(() => {
+        this.router.navigate([currentUrl]);
+      });
   }
 
   orderUpdateStatusPreparing() {
-    console.log('teste');
     this.orderService
       .updateStatusOrder(this.order.idOrder, {
         idStatusOrder: 2,

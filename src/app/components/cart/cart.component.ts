@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { PizzaOrder } from '../../types/pizza';
 import { CartService } from '../../services/cart.service';
 import { CartItemComponent } from '../cart-item/cart-item.component';
 import { matChevronLeft } from '@ng-icons/material-icons/baseline';
-import { Order, OrderDTO } from '../../types/order';
+import { OrderDTO } from '../../types/order';
 import { OrderService } from '../../services/order.service';
 import { UserService } from '../../services/user.service';
 import { User } from '../../types/user';
@@ -50,7 +50,7 @@ export class CartComponent {
   }
 
   backToHome() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu']);
   }
 
   handleFinishOrder() {

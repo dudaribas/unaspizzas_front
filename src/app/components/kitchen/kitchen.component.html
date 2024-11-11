@@ -1,5 +1,7 @@
 <div class="kitchen">
-
+  <div class="kitchen-header">
+    <button (click)="goToKitchenPizzas()" class="button-add">Adicionar pizzas ao cardápio</button>
+  </div>
   <div class="order-list">
     <div *ngFor="let order of orders">
       <app-kitchen-order-item [order]="order"></app-kitchen-order-item>

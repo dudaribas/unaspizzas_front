@@ -2,13 +2,34 @@
   min-height: 100vh;
 }
 
+.kitchen-header {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  padding: 3rem 3rem 0 3rem;
+}
+
+.button-add {
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  width: 100%;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #ED1D24;
+  border: none;
+  font-weight: bold;
+  width: max-content;
+  cursor: pointer;
+}
+
+
 .order-list {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding: 4rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   align-items: stretch;
 }
