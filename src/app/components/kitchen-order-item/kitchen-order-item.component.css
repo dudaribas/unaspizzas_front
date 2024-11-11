@@ -1,0 +1,51 @@
+.kitchen-order-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  height: 100%;
+}
+
+.kitchen-order-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: #FFF;
+  font-weight: 500;
+}
+
+.kitchen-order-header > div {
+  display: flex;
+  justify-content: right;
+}
+
+.kitchen-order-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.2rem;
+  justify-content: space-between;
+}
+
+.order-itens {
+  padding-left: 2rem;
+}
+
+.order-itens li {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.button-action {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.6rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}

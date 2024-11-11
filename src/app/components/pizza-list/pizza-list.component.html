@@ -1,3 +1,7 @@
+<div class="my-orders-div" *ngIf="user !== null">
+  <button (click)="goToMyOrders()">Meus pedidos</button>
+</div>
+
 <div class="category-list">
   <div *ngFor="let category of categoryList">
     <div
@@ -24,7 +28,7 @@
 <div class="cart-footer" (click)="goToCart()">
   <span>Visualizar sacola</span>
   <div class="cart-icon">
-    <img src="basket.png" alt="Cart icon">
-    <span>{{totalCartItems}}</span>
+    <img src="basket.png" alt="Cart icon" />
+    <span>{{ totalCartItems }}</span>
   </div>
 </div>
