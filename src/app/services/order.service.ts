@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Order, OrderDTO } from '../types/order';
+import { Order, OrderDTO, StatusOrder } from '../types/order';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,11 +11,26 @@ export class OrderService {
 
   constructor(private http: HttpClient) {}
 
-  getPizzasByUser(idUser: number): Observable<Order[]> {
+  getOrdersByUser(idUser: number): Observable<Order[]> {
     return this.http.get<Order[]>(`${this.apiUrl}/user/${idUser}`);
   }
 
   createOrder(orderDTO: OrderDTO): Observable<Order> {
     return this.http.post<Order>(this.apiUrl, orderDTO);
+  }
+
+  getOrdersByIdStatusOrder(idStatusOrderList: number[]): Observable<Order[]> {
+    let query = idStatusOrderList.join(',');
+    return this.http.get<Order[]>(`${this.apiUrl}?idStatusOrder=${query}`);
+  }
+
+  updateStatusOrder(
+    idOrder: number,
+    statusOrder: StatusOrder
+  ): Observable<Order> {
+    return this.http.put<Order>(
+      `${this.apiUrl}/${idOrder}/status`,
+      statusOrder
+    );
   }
 }

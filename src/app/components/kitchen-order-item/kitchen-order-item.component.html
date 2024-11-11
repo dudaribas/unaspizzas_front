@@ -1,0 +1,44 @@
+<div class="kitchen-order-item">
+  <div
+    class="kitchen-order-header"
+    [ngStyle]="
+      order.statusOrder.idStatusOrder === 1
+        ? {
+            'background-color': '#D32E2E'
+          }
+        : { 'background-color': '#E8BB2D' }
+    "
+  >
+    <div>
+      <span>{{order.createdAt | date:"dd/MM/yyyy hh:mm" }}</span>
+      <span class="user-name">{{ order.user.name }}</span>
+    </div>
+    <div>
+      <span class="user-name">#{{ order.idOrder }}</span>
+    </div>
+  </div>
+
+  <div class="kitchen-order-content">
+    <div class="kitchen-order-pizzas">
+      <ul class="order-itens" *ngFor="let orderPizza of order.orderPizzas">
+        <li>{{ orderPizza.quantity }} {{ orderPizza.pizza.name }}</li>
+      </ul>
+    </div>
+
+    <button
+      class="button-action"
+      *ngIf="order.statusOrder.idStatusOrder === 1"
+      [ngStyle]="{ 'background-color': '#D32E2E' }"
+    >
+      <span (click)="orderUpdateStatusPreparing()">Preparar</span>
+    </button>
+
+    <button
+      class="button-action"
+      *ngIf="order.statusOrder.idStatusOrder === 2"
+      [ngStyle]="{ 'background-color': '#E8BB2D' }"
+    >
+      <span (click)="orderUpdateStatusFinish()">Finalizar</span>
+    </button>
+  </div>
+</div>
