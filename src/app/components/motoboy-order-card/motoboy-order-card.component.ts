@@ -1,17 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Order } from '../../types/order';
 import { OrderService } from '../../services/order.service';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-kitchen-order-item',
+  selector: 'app-motoboy-order-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './kitchen-order-item.component.html',
-  styleUrl: './kitchen-order-item.component.css',
+  templateUrl: './motoboy-order-card.component.html',
+  styleUrl: './motoboy-order-card.component.css',
 })
-export class KitchenOrderItemComponent {
+export class MotoboyOrderCardComponent {
   @Input()
   order!: Order;
 
@@ -24,25 +24,18 @@ export class KitchenOrderItemComponent {
     });
   }
 
-  orderUpdateStatusPreparing() {
+  orderUpdateStatusDeliveryRoute() {
     this.orderService
       .updateStatusOrder(this.order.idOrder, {
-        idStatusOrder: 2,
-        nameStatus: 'Preparando',
+        idStatusOrder: 4,
+        nameStatus: 'Em rota de entrega',
       })
-      .subscribe((data) => {
+      .subscribe(() => {
         this.refreshPage();
       });
   }
 
-  orderUpdateStatusFinish() {
-    this.orderService
-      .updateStatusOrder(this.order.idOrder, {
-        idStatusOrder: 3,
-        nameStatus: 'Pronto',
-      })
-      .subscribe((data) => {
-        this.refreshPage();
-      });
+  goToMotoboyOrderDetail(idOrder: number) {
+    this.router.navigate([`/motoboy/order-detail/${idOrder}`]);
   }
 }

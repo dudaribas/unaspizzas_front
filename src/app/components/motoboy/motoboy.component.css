@@ -1,0 +1,18 @@
+.order-header {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-header h1 {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.motoboy-order-list {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}

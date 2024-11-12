@@ -7,7 +7,6 @@ import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { matChevronLeft } from '@ng-icons/material-icons/baseline';
 import { UserOrderCardComponent } from '../user-order-card/user-order-card.component';
 import { UserService } from '../../services/user.service';
-import { User } from '../../types/user';
 
 @Component({
   selector: 'app-user-order-list',

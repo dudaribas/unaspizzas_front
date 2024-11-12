@@ -1,33 +1,44 @@
-.kitchen-order-item {
+.motoboy-order-card {
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  height: 100%;
 }
 
-.kitchen-order-header {
+.card-header {
+  padding: 0.8rem;
+}
+
+.card-header h3 {
+  font-size: 1rem;
+  color: #FFF;
+}
+
+.card-content {
+  padding: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem;
-  color: #FFF;
-  font-weight: 500;
 }
 
-.kitchen-order-header > div {
-  display: flex;
-  justify-content: right;
+.user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.kitchen-order-content {
-  padding: 1rem;
+.user-info p {
+  text-align: right;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.order-pizzas {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  gap: 1.2rem;
-  justify-content: space-between;
+  gap: 0.4rem;
 }
 
 .order-itens {
@@ -35,11 +46,11 @@
 }
 
 .order-itens li {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-.button-action {
+.button-order-action {
+  margin-top: 1rem;
   cursor: pointer;
   width: 100%;
   border: none;
@@ -51,6 +62,6 @@
   display: flex;
 }
 
-.button-action span {
+.button-order-action span {
   width: 100%;
 }

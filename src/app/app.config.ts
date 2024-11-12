@@ -12,6 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { InitialRouteComponent } from './components/initial-route/initial-route.component';
 import { KitchenPizzasComponent } from './components/kitchen-pizzas/kitchen-pizzas.component';
+import { MotoboyComponent } from './components/motoboy/motoboy.component';
+import { MotoboyOrderDetailComponent } from './components/motoboy-order-detail/motoboy-order-detail.component';
 
 const routes: Routes = [
   { path: '', component: InitialRouteComponent },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'kitchen/pizzas', component: KitchenPizzasComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'motoboy', component: MotoboyComponent },
+  { path: 'motoboy/order-detail/:id', component: MotoboyOrderDetailComponent },
 ];
 
 export const appConfig: ApplicationConfig = {

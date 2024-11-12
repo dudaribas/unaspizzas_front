@@ -1,5 +1,14 @@
-<div class="user-order-card">
-  <div class="card-header">
+<div class="motoboy-order-card">
+  <div
+    class="card-header"
+    [ngStyle]="
+      order.statusOrder.idStatusOrder === 3
+        ? {
+            'background-color': '#404040'
+          }
+        : { 'background-color': '#E8BB2D' }
+    "
+  >
     <h3>#{{ order.idOrder }} - {{ order.statusOrder.nameStatus }}</h3>
   </div>
 
@@ -29,5 +38,21 @@
         </li>
       </ul>
     </div>
+
+    <button
+      *ngIf="order.statusOrder.idStatusOrder === 3"
+      class="button-order-action"
+      [ngStyle]="{ 'background-color': '#404040' }"
+    >
+      <span (click)="orderUpdateStatusDeliveryRoute()">Aceitar </span>
+    </button>
+
+    <button
+      *ngIf="order.statusOrder.idStatusOrder === 4"
+      class="button-order-action"
+      [ngStyle]="{ 'background-color': '#E8BB2D' }"
+    >
+      <span (click)="goToMotoboyOrderDetail(order.idOrder)">Acompanhar</span>
+    </button>
   </div>
 </div>
