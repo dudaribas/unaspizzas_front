@@ -1,0 +1,9 @@
+<div class="order-header">
+  <h1>Minhas corridas</h1>
+</div>
+
+<div class="motoboy-order-list">
+  <div *ngFor="let order of orderList">
+    <app-motoboy-order-card [order]="order"></app-motoboy-order-card>
+  </div>
+</div>

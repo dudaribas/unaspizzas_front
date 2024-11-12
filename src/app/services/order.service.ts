@@ -24,6 +24,10 @@ export class OrderService {
     return this.http.get<Order[]>(`${this.apiUrl}?idStatusOrder=${query}`);
   }
 
+  getOrderById(idOrder: string): Observable<Order> {
+    return this.http.get<Order>(`${this.apiUrl}/${idOrder}`);
+  }
+
   updateStatusOrder(
     idOrder: number,
     statusOrder: StatusOrder

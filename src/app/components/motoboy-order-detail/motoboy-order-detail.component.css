@@ -1,0 +1,95 @@
+.motoboy-order-detail {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-header {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-header button {
+  display: flex;
+  background: none;
+  border: none;
+}
+
+.order-header h1 {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.order-detail {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.customer-info {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
+  gap: 0.8rem;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info-container p {
+  text-align: right;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.order-pizzas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.order-itens {
+  padding-left: 2rem;
+}
+
+.order-itens li {
+  font-size: 0.9rem;
+}
+
+.data-payment {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
+  gap: 0.8rem;
+}
+
+.footer-order-detail {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.confirm-delivery {
+  margin-top: 1rem;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #ED1D24;
+}
