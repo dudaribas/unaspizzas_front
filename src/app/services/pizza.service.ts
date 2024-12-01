@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pizza } from '../types/pizza';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PizzaService {
-  private apiUrl = 'http://localhost:8080/pizza';
+  private apiUrl = environment.apiBaseUrl + '/pizza';
 
   constructor(private http: HttpClient) {}
 
