@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { LoginDTO, User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8080/user';
+  private apiUrl = environment.apiBaseUrl + '/user';
 
   user: User | null = null;
   private userSubject = new BehaviorSubject<User | null>(this.user);
